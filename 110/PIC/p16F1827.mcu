@@ -1,0 +1,29 @@
+<!DOCTYPE SimulIDE>
+
+<mcu name="p16F1827" core="Pic14e" data="4096" prog="4096" progword="2" eeprom="256" 
+            inst_cycle="4" freq="32000000">
+            
+    <include file="pic/pic14e_regs.xml" />
+    <include file="p16F182x/p16F1827_regs.xml" />
+    <include file="p16F182x/p16F1829_int.xml" />
+    <include file="p16F182x/p16F1827_perif.xml" />
+
+    <msspunit name="MSSP2" type="00" configregsA="SSP2CON1" >
+                        
+      <twi name="TWI"  configregsA="SSP2CON1" configregsB="SSP2CON2" 
+                       dataregs="SSP2BUF" 
+                       addressreg="SSP2ADD"
+                       statusreg="SSP2STAT" 
+                       interrupt="SSP2"
+                       prescalers=""
+                       pins="PORTB2,PORTB5" /><!-- "SDA,SCL" -->
+
+      <spi name="SPI"  configregsA="SSP2CON1" 
+                       dataregs="SSP2BUF" 
+                       statusreg="SSP2STAT"
+                       interrupt="SSP2" 
+                       prescalers="4,16,64,0"
+                       pins="PORTB2,PORTA0,PORTB5,PORTA1"/><!-- "SD0,SDI,SCK,SS" -->
+    </msspunit>
+    
+</mcu>

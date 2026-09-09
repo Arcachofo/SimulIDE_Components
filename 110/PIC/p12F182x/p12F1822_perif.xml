@@ -1,0 +1,92 @@
+<parts>
+
+  <port name="PORTA" pins="6" outreg="PORTA,LATA" dirreg="!TRISA"
+                     configregsA="ANSELA"
+                     inpmask="00111111"
+                     pullups="WPUA"
+                     resetpin="PORTA3">
+    <extint    name="INT" pin="PORTA2" configbits="INTEDG"/>
+    <interrupt name="IOC" mask="00111111"/>
+  </port>
+
+  <intosc name="intosc" type="02" configregsA="OSCCON" 
+                        clockpins="PORTA4,PORTA5" />
+
+  <timer name="TIMER0" type="800" configregsA="OPTION" 
+                       counter="TMR0"
+                       clockpin="PORTA2"
+                       interrupt="T0_OVF"
+                       prescalers="2,4,8,16,32,64,128,256"/>
+
+  <timer name="TIMER1" type="161" configregsA="T1CON" 
+                       counter="TMR1L,TMR1H"
+                       clockpin="PORTA5"
+                       interrupt="T1_OVF"
+                       prescalers="1,2,4,8"/>
+
+  <timer name="TIMER2" type="820" configregsA="T2CON" configregsB="PR2"
+                       counter="TMR2"
+                       interrupt="T2_MATCH"
+                       prescalers="1,4,16,64"/>
+
+  <ccpunit name="CCP+1" type="00" configregsA="CCP1CON"
+                        ccpreg="CCPR1L,CCPR1H"
+                        pin="PORTA5,PORTA2"
+                        interrupt="CCP1" />
+
+  <usart name="EUSART"  number="1" configregsA="TXSTA" configregsB="RCSTA" configregsC="BAUDCON"
+                        interrupt="USART_T">
+
+      <trunit type="tx" pin="PORTA4,PORTA0" configbitsA="TXCKSEL" register="TXREG"/>
+      <trunit type="rx" pin="PORTA5,PORTA1" configbitsA="RXDTSEL" register="RCREG" interrupt="USART_R" />
+  </usart>
+
+  <msspunit name="MSSP1" type="00" configregsA="SSP1CON1" >
+                      
+    <twi name="TWI"  configregsA="SSP1CON1" configregsB="SSP1CON2" 
+                     dataregs="SSP1BUF" 
+                     addressreg="SSP1ADD"
+                     statusreg="SSP1STAT" 
+                     interrupt="SSP1"
+                     prescalers=""
+                     pins="PORTA2,PORTA1" /><!-- "SDA,SCL" -->
+
+    <spi name="SPI"  configregsA="SSP1CON1" 
+                     dataregs="SSP1BUF" 
+                     statusreg="SSP1STAT"
+                     interrupt="SSP1" 
+                     prescalers="4,16,64,0"
+                     pins="PORTA4,PORTA2,PORTA1,PORTA3"/><!-- "SDO,SDI,SCK,SS" -->
+  </msspunit>
+
+  <vref name="Vref" configregsA="FVRCON" />
+
+  <adc name="ADC" type="20" bits="10" configregsA="ADCON0" configregsB="ADCON1"
+                  dataregs="ADRESL,ADRESH"
+                  interrupt="ADC"
+                  prescalers="2,8,32,0,4,16,64,0"
+                  adcpins="PORTA0,PORTA1,PORTA2,PORTA4"
+                  vrefpins="PORTA1"/>
+
+  <dac name="DAC" configregsA="DACCON0"
+                  dacreg="DACCON1"
+                  pins="PORTA0" />
+
+  <comp name="COMP1" type="20" configregsA="CM1CON0" configregsB="CM1CON1"
+                     interrupt="COMP1"
+                     pins="PORTA0,PORTA1,PORTA2" />
+
+  <wdt name="WDT" type="01" configregsA="WDTCON"
+                  prescalers="1,2,4,8,16,32,64,128"/>
+
+  <rom name="ROM" configregsA="EECON1" configregsB="EECON2"
+                  dataregs="EEDATL" 
+                  addressreg="EEADRL" 
+                  interrupt="EEPR" />
+
+  <configwords name="cfgWord" type="04">
+    <word name="CONFIG1" address="0x8007" value="0x3FFF" />
+    <word name="CONFIG2" address="0x8008" value="0x3FFF" />
+  </configwords>
+
+</parts>
