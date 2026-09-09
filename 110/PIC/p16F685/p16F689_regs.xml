@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Generated from Microchip device_packs edc file:
+      PIC16F689.PIC
+      by generate_regs.py.
+  Register/bit names are Microchip datasheet (DS) names, mapped to SimulIDE heritage names.
+-->
+<parts>
+  <regblock name="SFR0" start="0x0000" end="0x001F">
+    <register  name="PORTA"    addr="0x005" reset="00000000  " mask="00111111"
+               bits="RA0,RA1,RA2,RA3,RA4,RA5,0,0" />
+    <register  name="PORTB"    addr="0x006" reset="00000000  " mask="11110000"
+               bits="0,0,0,0,RB4,RB5,RB6,RB7" />
+    <register  name="PORTC"    addr="0x007" reset="00000000  " mask="11111111"
+               bits="RC0,RC1,RC2,RC3,RC4,RC5,RC6,RC7" />
+    <register  name="PCLATH"   addr="0x00A" reset="00000000  " mask="00011111" bits="" />
+    <register  name="INTCON"   addr="0x00B" reset="00000000  " mask="11111111"
+               bits="RABIF,INTF,T0IF,RABIE,INTE,T0IE,PEIE,GIE" />
+    <register  name="PIR1"     addr="0x00C" reset="00000000  " mask="01111001"
+               bits="TMR1IF,0,0,SSPIF,TXIF,RCIF,ADIF,0" />
+    <register  name="PIR2"     addr="0x00D" reset="00000000  " mask="11110000"
+               bits="0,0,0,0,EEIF,C1IF,C2IF,OSFIF" />
+    <register  name="TMR1L"    addr="0x00E" reset="00000000  " mask="11111111" bits="" />
+    <register  name="TMR1H"    addr="0x00F" reset="00000000  " mask="11111111" bits="" />
+    <register  name="T1CON"    addr="0x010" reset="00000000  " mask="11111111"
+               bits="TMR1ON,TMR1CS,T1SYNC,T1OSCEN,T1CKPS,0,TMR1GE,T1GINV" />
+    <register  name="SSPBUF"   addr="0x013" reset="00000000  " mask="11111111" bits="" />
+    <register  name="SSPCON"   addr="0x014" reset="00000000  " mask="11111111"
+               bits="SSPM,0,0,0,CKP,SSPEN,SSPOV,WCOL" />
+    <register  name="RCSTA"    addr="0x018" reset="00000000  " mask="11111111"
+               bits="RX9D,OERR,FERR,ADDEN,CREN,SREN,RX9,SPEN" />
+    <register  name="TXREG"    addr="0x019" reset="00000000  " mask="11111111" bits="" />
+    <register  name="RCREG"    addr="0x01A" reset="00000000  " mask="11111111" bits="" />
+    <register  name="ADRESH"   addr="0x01E" reset="00000000  " mask="11111111" bits="" />
+    <register  name="ADCON0"   addr="0x01F" reset="00000000  " mask="11111111"
+               bits="ADON,GO/DONE,CHS,0,0,0,VCFG,ADFM" />
+  </regblock>
+  <datablock name="GPR0" start="0x0020" end="0x006F" />
+  <datablock name="GPRNOBNK" start="0x0070" end="0x007F" />
+
+  <regblock name="SFR1" start="0x0080" end="0x009F">
+    <mapped  addr="0x080" mapto="0x000" /> <!-- INDF -->
+    <mapped  addr="0x082" mapto="0x002" /> <!-- PCL -->
+    <mapped  addr="0x083" mapto="0x003" /> <!-- STATUS -->
+    <mapped  addr="0x084" mapto="0x004" /> <!-- FSR -->
+    <mapped  addr="0x08A" mapto="0x00A" /> <!-- PCLATH -->
+    <mapped  addr="0x08B" mapto="0x00B" /> <!-- INTCON -->
+    <register  name="OPTION"   addr="0x081" reset="11111111  " mask="11111111"
+               bits="PS,0,0,PSA,T0SE,T0CS,INTEDG,nRABPU" />
+    <register  name="TRISA"    addr="0x085" reset="00111111  " mask="00111111"
+               bits="TRISA0,TRISA1,TRISA2,TRISA3,TRISA4,TRISA5,0,0" />
+    <register  name="TRISB"    addr="0x086" reset="11110000  " mask="11110000"
+               bits="0,0,0,0,TRISB4,TRISB5,TRISB6,TRISB7" />
+    <register  name="TRISC"    addr="0x087" reset="11111111  " mask="11111111"
+               bits="TRISC0,TRISC1,TRISC2,TRISC3,TRISC4,TRISC5,TRISC6,TRISC7" />
+    <register  name="PIE1"     addr="0x08C" reset="00000000  " mask="01111001"
+               bits="TMR1IE,0,0,SSPIE,TXIE,RCIE,ADIE,0" />
+    <register  name="PIE2"     addr="0x08D" reset="00000000  " mask="11110000"
+               bits="0,0,0,0,EEIE,C1IE,C2IE,OSFIE" />
+    <register  name="PCON"     addr="0x08E" reset="00010000  " mask="00110011"
+               bits="NOT_BOR,NOT_POR,0,0,SBOREN,ULPWUE,0,0" />
+    <register  name="OSCCON"   addr="0x08F" reset="01100000  " mask="01111111"
+               bits="SCS,LTS,HTS,OSTS,IOSCF,0,0,0" />
+    <register  name="OSCTUNE"  addr="0x090" reset="00000000  " mask="00011111"
+               bits="TUN,0,0,0,0,0,0,0" />
+    <register  name="SSPADD"   addr="0x093" reset="00000000  " mask="11111111" bits="" />
+    <register  name="SSPMSK"   addr="0x093" reset="11111111  " mask="11111111"
+               bits="MSK0,MSK1,MSK2,MSK3,MSK4,MSK5,MSK6,MSK7" />
+    <register  name="SSPSTAT"  addr="0x094" reset="00000000  " mask="11111111"
+               bits="BF,UA,RW,S,P,D_A,CKE,SMP" />
+    <register  name="WPUA"     addr="0x095" reset="00110111  " mask="00110111"
+               bits="WPUA0,WPUA1,WPUA2,0,WPUA4,WPUA5,0,0" />
+    <register  name="IOCA"     addr="0x096" reset="00000000  " mask="00111111"
+               bits="IOCA0,IOCA1,IOCA2,IOCA3,IOCA4,IOCA5,0,0" />
+    <register  name="WDTCON"   addr="0x097" reset="00001000  " mask="00011111"
+               bits="SWDTEN,WDTPS,0,0,0,0,0,0" />
+    <register  name="TXSTA"    addr="0x098" reset="00000010  " mask="11111111"
+               bits="TXGD,TMRT,BRGH,SENDB,SYNC,TXEN,TX9,CSRC" />
+    <register  name="SPBRG"    addr="0x099" reset="00000000  " mask="11111111"
+               bits="BRG0,BRG1,BRG2,BRG3,BRG4,BRG5,BRG6,BRG7" />
+    <register  name="SPBRGH"   addr="0x09A" reset="00000000  " mask="11111111"
+               bits="BRG8,BRG9,BRG10,BRG11,BRG12,BRG13,BRG14,BRG15" />
+    <register  name="BAUDCTL"  addr="0x09B" reset="01000000  " mask="11011011"
+               bits="ABDEN,WUE,0,BRG16,SCKP,0,RCIDL,ABDOVF" />
+    <register  name="ADRESL"   addr="0x09E" reset="00000000  " mask="11111111" bits="" />
+    <register  name="ADCON1"   addr="0x09F" reset="00000000  " mask="01110000"
+               bits="0,0,0,0,ADCS,0,0,0" />
+  </regblock>
+  <datablock name="GPR1" start="0x00A0" end="0x00EF" />
+  <datablock name="GPR1S" start="0x00F0" end="0x00FF" mapto="0x0070" />
+
+  <regblock name="SFR2" start="0x0100" end="0x011F">
+    <mapped  addr="0x100" mapto="0x000" /> <!-- INDF -->
+    <mapped  addr="0x101" mapto="0x001" /> <!-- TMR0 -->
+    <mapped  addr="0x102" mapto="0x002" /> <!-- PCL -->
+    <mapped  addr="0x103" mapto="0x003" /> <!-- STATUS -->
+    <mapped  addr="0x104" mapto="0x004" /> <!-- FSR -->
+    <mapped  addr="0x105" mapto="0x005" /> <!-- PORTA -->
+    <mapped  addr="0x106" mapto="0x006" /> <!-- PORTB -->
+    <mapped  addr="0x107" mapto="0x007" /> <!-- PORTC -->
+    <mapped  addr="0x10A" mapto="0x00A" /> <!-- PCLATH -->
+    <mapped  addr="0x10B" mapto="0x00B" /> <!-- INTCON -->
+    <register  name="EEDAT"    addr="0x10C" reset="00000000  " mask="11111111" bits="" />
+    <register  name="EEADR"    addr="0x10D" reset="00000000  " mask="11111111" bits="" />
+    <register  name="EEDATH"   addr="0x10E" reset="00000000  " mask="00111111" bits="" />
+    <register  name="EEADRH"   addr="0x10F" reset="00000000  " mask="00001111" bits="" />
+    <register  name="WPUB"     addr="0x115" reset="11110000  " mask="11110000" bits="" />
+    <register  name="IOCB"     addr="0x116" reset="00000000  " mask="11110000"
+               bits="0,0,0,0,IOCB4,IOCB5,IOCB6,IOCB7" />
+    <register  name="VRCON"    addr="0x118" reset="00000000  " mask="11111111"
+               bits="VR,0,0,0,VP6EN,VRR,C2VREN,C1VREN" />
+    <register  name="CM1CON0"  addr="0x119" reset="00000000  " mask="11110111"
+               bits="C1CH,0,C1R,0,C1POL,C1OE,C1OUT,C1ON" />
+    <register  name="CM2CON0"  addr="0x11A" reset="00000000  " mask="11110111"
+               bits="C2CH,0,C2R,0,C2POL,C2OE,C2OUT,C2ON" />
+    <register  name="CM2CON1"  addr="0x11B" reset="00000010  " mask="11000011"
+               bits="C2SYNC,T1GSS,0,0,0,0,MC2OUT,MC1OUT" />
+    <register  name="ANSEL"    addr="0x11E" reset="11111111  " mask="11111111"
+               bits="ANS0,ANS1,ANS2,ANS3,ANS4,ANS5,ANS6,ANS7" />
+    <register  name="ANSELH"   addr="0x11F" reset="00001111  " mask="00001111"
+               bits="ANS8,ANS9,ANS10,ANS11,0,0,0,0" />
+  </regblock>
+  <datablock name="GPR2" start="0x0120" end="0x016F" />
+  <datablock name="GPR2S" start="0x0170" end="0x017F" mapto="0x0070" />
+
+  <regblock name="SFR3" start="0x0180" end="0x019F">
+    <mapped  addr="0x180" mapto="0x000" /> <!-- INDF -->
+    <mapped  addr="0x181" mapto="0x081" /> <!-- OPTION_REG -->
+    <mapped  addr="0x182" mapto="0x002" /> <!-- PCL -->
+    <mapped  addr="0x183" mapto="0x003" /> <!-- STATUS -->
+    <mapped  addr="0x184" mapto="0x004" /> <!-- FSR -->
+    <mapped  addr="0x185" mapto="0x085" /> <!-- TRISA -->
+    <mapped  addr="0x186" mapto="0x086" /> <!-- TRISB -->
+    <mapped  addr="0x187" mapto="0x087" /> <!-- TRISC -->
+    <mapped  addr="0x18A" mapto="0x00A" /> <!-- PCLATH -->
+    <mapped  addr="0x18B" mapto="0x00B" /> <!-- INTCON -->
+    <register  name="EECON1"   addr="0x18C" reset="00000000  " mask="10001111"
+               bits="RD,WR,WREN,WRERR,0,0,0,EEPGD" />
+    <register  name="EECON2"   addr="0x18D" reset="00000000  " mask="11111111" bits="" />
+    <register  name="SRCON"    addr="0x19E" reset="00000000  " mask="11111100"
+               bits="0,0,PULSR,PULSS,C2REN,C1SEN,SR,0" />
+  </regblock>
+  <datablock name="GPR3" start="0x01F0" end="0x01FF" mapto="0x0070" />
+
+</parts>

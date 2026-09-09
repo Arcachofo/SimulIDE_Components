@@ -36,13 +36,13 @@
                        pin="PORTB0"
                        interrupt="CCP1" />
 
-  <comp name="COMP1" type="01" configregsA="CMCON0"
+  <comp name="COMP1" type="01" configregsA="CMCON"
                       interrupt="CMIR"
-                      pins="PORTA0,PORTA3,PORTA2"/>
+                      pins="PORTA0,PORTA3,PORTA3"/>
 
-  <comp name="COMP2" type="02" configregsA="CMCON0"
+  <comp name="COMP2" type="02" configregsA="CMCON"
                       interrupt="CMIR"
-                      pins="PORTA1,PORTA2,PORTA3"/>
+                      pins="PORTA1,PORTA2,PORTA4"/>
                       
   <adc name="ADC" type="11" bits="10" configregsA="ADCON0" configregsB="ADCON1"
                         dataregs="ADRESL,ADRESH"

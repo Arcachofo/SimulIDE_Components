@@ -76,7 +76,7 @@
                      pins="PORTA0,PORTA1,PORTB3,PORTB1,PORTA2,PORTA5" />
 
   <rom name="ROM" configregsA="EECON1" configregsB="EECON2"
-                  dataregs="EEDAT" 
+                   dataregs="EEDATA" 
                   addressreg="EEADR"
                   interrupt="EEPR"/>
 

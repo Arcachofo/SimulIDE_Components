@@ -1,24 +1,597 @@
 <parts>
-    <!-- BANK 0 -->
-    <regblock name="SFRC" start="0x0000" end="0x000B" streg="STATUS">
-        <register name="INDF0"   addr="0x00" bits=""/>
-        <register name="INDF1"   addr="0x01" bits=""/>
-        <register name="PCL"     addr="0x02" bits=""/>
-        <register name="STATUS"  addr="0x03" reset="00011000" mask="11100111"
-                  bits="C,DC,Z,PD,TO,--,--,--"/>
-                  
-        <register name="FSR0L"   addr="0x04" bits=""/>
-        <register name="FSR0H"   addr="0x05" bits=""/>
-        <register name="FSR1L"   addr="0x06" bits=""/>
-        <register name="FSR1H"   addr="0x07" bits=""/>
-        
-        <register name="BSR"     addr="0x08" 
-                  bits="BSR0,BSR1,BSR2,BSR3,BSR4,0,0,0" />
-                  
-        <register name="WREG"    addr="0x09" bits=""/>
-        
-        <register name="PCLATH"  addr="0x0A" bits=""/>
-        <register name="INTCON"  addr="0x0B" 
-                  bits="IOCIF,INTF,TMR0IF,IOCIE,INTE,TMR0IE,PEIE,GIE" />
-    </regblock>
+<!-- BANK 0 -->
+  <regblock name="SFRC" start="0x0000" end="0x000B" streg="STATUS">
+      <register name="INDF0"   addr="0x00" bits=""/>
+      <register name="INDF1"   addr="0x01" bits=""/>
+      <register name="PCL"     addr="0x02" bits=""/>
+      <register name="STATUS"  addr="0x03" reset="00011000" mask="11100111"
+                bits="C,DC,Z,PD,TO,--,--,--"/>
+
+      <register name="FSR0L"   addr="0x04" bits=""/>
+      <register name="FSR0H"   addr="0x05" bits=""/>
+      <register name="FSR1L"   addr="0x06" bits=""/>
+      <register name="FSR1H"   addr="0x07" bits=""/>
+
+      <register name="BSR"     addr="0x08"
+                bits="BSR0,BSR1,BSR2,BSR3,BSR4,0,0,0" />
+
+      <register name="WREG"    addr="0x09" bits=""/>
+
+      <register name="PCLATH"  addr="0x0A" bits=""/>
+      <register name="INTCON"  addr="0x0B"
+                bits="IOCIF,INTF,TMR0IF,IOCIE,INTE,TMR0IE,PEIE,GIE" />
+  </regblock>
+  <datablock name="RAM0" start="0x0070" end="0x007F"/>
+   
+<!-- BANK 1 -->
+  <regblock name="SFR1" start="0x0080" end="0x009F">
+    <mapped                   addr="0x0080" mapto="0x00"/><!-- INDF0 -->
+    <mapped                   addr="0x0081" mapto="0x01"/><!-- INDF1 -->
+    <mapped                   addr="0x0082" mapto="0x02"/><!-- PCL -->
+    <mapped                   addr="0x0083" mapto="0x03"/><!-- STATUS -->
+    <mapped                   addr="0x0084" mapto="0x04"/><!-- FSR0L -->
+    <mapped                   addr="0x0085" mapto="0x05"/><!-- FSR0H -->
+    <mapped                   addr="0x0086" mapto="0x06"/><!-- FSR1L -->
+    <mapped                   addr="0x0087" mapto="0x07"/><!-- FSR1H -->
+    <mapped                   addr="0x0088" mapto="0x08"/><!-- BSR -->
+    <mapped                   addr="0x0089" mapto="0x09"/><!-- WREG -->
+    <mapped                   addr="0x008A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                   addr="0x008B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM1" start="0x00F0" end="0x00FF" mapto="0x0070"/>
+   
+<!-- BANK 2 -->
+  <regblock name="SFR2" start="0x0100" end="0x011F">
+    <mapped                  addr="0x0100" mapto="0x00"/><!-- INDF0 -->
+    <mapped                  addr="0x0101" mapto="0x01"/><!-- INDF1 -->
+    <mapped                  addr="0x0102" mapto="0x02"/><!-- PCL -->
+    <mapped                  addr="0x0103" mapto="0x03"/><!-- STATUS -->
+    <mapped                  addr="0x0104" mapto="0x04"/><!-- FSR0L -->
+    <mapped                  addr="0x0105" mapto="0x05"/><!-- FSR0H -->
+    <mapped                  addr="0x0106" mapto="0x06"/><!-- FSR1L -->
+    <mapped                  addr="0x0107" mapto="0x07"/><!-- FSR1H -->
+    <mapped                  addr="0x0108" mapto="0x08"/><!-- BSR -->
+    <mapped                  addr="0x0109" mapto="0x09"/><!-- WREG -->
+    <mapped                  addr="0x010A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                  addr="0x010B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM2" start="0x0170" end="0x017F" mapto="0x0070"/>
+   
+<!-- BANK 3 -->
+  <regblock name="SFR3" start="0x0180" end="0x019F">
+    <mapped                  addr="0x0180" mapto="0x00"/><!-- INDF0 -->
+    <mapped                  addr="0x0181" mapto="0x01"/><!-- INDF1 -->
+    <mapped                  addr="0x0182" mapto="0x02"/><!-- PCL -->
+    <mapped                  addr="0x0183" mapto="0x03"/><!-- STATUS -->
+    <mapped                  addr="0x0184" mapto="0x04"/><!-- FSR0L -->
+    <mapped                  addr="0x0185" mapto="0x05"/><!-- FSR0H -->
+    <mapped                  addr="0x0186" mapto="0x06"/><!-- FSR1L -->
+    <mapped                  addr="0x0187" mapto="0x07"/><!-- FSR1H -->
+    <mapped                  addr="0x0188" mapto="0x08"/><!-- BSR -->
+    <mapped                  addr="0x0189" mapto="0x09"/><!-- WREG -->
+    <mapped                  addr="0x018A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                  addr="0x018B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM3" start="0x01F0" end="0x01FF" mapto="0x0070"/>
+ 
+<!-- BANK 4 -->
+  <regblock name="SFR4" start="0x0200" end="0x021F">
+    <mapped                  addr="0x0200" mapto="0x00"/><!-- INDF0 -->
+    <mapped                  addr="0x0201" mapto="0x01"/><!-- INDF1 -->
+    <mapped                  addr="0x0202" mapto="0x02"/><!-- PCL -->
+    <mapped                  addr="0x0203" mapto="0x03"/><!-- STATUS -->
+    <mapped                  addr="0x0204" mapto="0x04"/><!-- FSR0L -->
+    <mapped                  addr="0x0205" mapto="0x05"/><!-- FSR0H -->
+    <mapped                  addr="0x0206" mapto="0x06"/><!-- FSR1L -->
+    <mapped                  addr="0x0207" mapto="0x07"/><!-- FSR1H -->
+    <mapped                  addr="0x0208" mapto="0x08"/><!-- BSR -->
+    <mapped                  addr="0x0209" mapto="0x09"/><!-- WREG -->
+    <mapped                  addr="0x020A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                  addr="0x020B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM4" start="0x0270" end="0x027F" mapto="0x0070"/>
+   
+<!-- BANK 5 -->
+  <regblock name="SFR5" start="0x0280" end="0x029F">
+    <mapped                  addr="0x0280" mapto="0x00"/><!-- INDF0 -->
+    <mapped                  addr="0x0281" mapto="0x01"/><!-- INDF1 -->
+    <mapped                  addr="0x0282" mapto="0x02"/><!-- PCL -->
+    <mapped                  addr="0x0283" mapto="0x03"/><!-- STATUS -->
+    <mapped                  addr="0x0284" mapto="0x04"/><!-- FSR0L -->
+    <mapped                  addr="0x0285" mapto="0x05"/><!-- FSR0H -->
+    <mapped                  addr="0x0286" mapto="0x06"/><!-- FSR1L -->
+    <mapped                  addr="0x0287" mapto="0x07"/><!-- FSR1H -->
+    <mapped                  addr="0x0288" mapto="0x08"/><!-- BSR -->
+    <mapped                  addr="0x0289" mapto="0x09"/><!-- WREG -->
+    <mapped                  addr="0x028A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                  addr="0x028B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM5" start="0x02F0" end="0x02FF"  mapto="0x0070"/>
+   
+<!-- BANK 6 -->
+  <regblock name="SFR6" start="0x0300" end="0x031F">
+    <mapped                  addr="0x0300" mapto="0x00"/><!-- INDF0 -->
+    <mapped                  addr="0x0301" mapto="0x01"/><!-- INDF1 -->
+    <mapped                  addr="0x0302" mapto="0x02"/><!-- PCL -->
+    <mapped                  addr="0x0303" mapto="0x03"/><!-- STATUS -->
+    <mapped                  addr="0x0304" mapto="0x04"/><!-- FSR0L -->
+    <mapped                  addr="0x0305" mapto="0x05"/><!-- FSR0H -->
+    <mapped                  addr="0x0306" mapto="0x06"/><!-- FSR1L -->
+    <mapped                  addr="0x0307" mapto="0x07"/><!-- FSR1H -->
+    <mapped                  addr="0x0308" mapto="0x08"/><!-- BSR -->
+    <mapped                  addr="0x0309" mapto="0x09"/><!-- WREG -->
+    <mapped                  addr="0x030A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                  addr="0x030B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM6" start="0x0370" end="0x037F"  mapto="0x0070"/>
+ 
+<!-- BANK 7 -->
+  <regblock name="SFR7" start="0x0380" end="0x039F">
+    <mapped                  addr="0x0380" mapto="0x00"/><!-- INDF0 -->
+    <mapped                  addr="0x0381" mapto="0x01"/><!-- INDF1 -->
+    <mapped                  addr="0x0382" mapto="0x02"/><!-- PCL -->
+    <mapped                  addr="0x0383" mapto="0x03"/><!-- STATUS -->
+    <mapped                  addr="0x0384" mapto="0x04"/><!-- FSR0L -->
+    <mapped                  addr="0x0385" mapto="0x05"/><!-- FSR0H -->
+    <mapped                  addr="0x0386" mapto="0x06"/><!-- FSR1L -->
+    <mapped                  addr="0x0387" mapto="0x07"/><!-- FSR1H -->
+    <mapped                  addr="0x0388" mapto="0x08"/><!-- BSR -->
+    <mapped                  addr="0x0389" mapto="0x09"/><!-- WREG -->
+    <mapped                  addr="0x038A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                  addr="0x038B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM7" start="0x03F0" end="0x03FF"  mapto="0x0070"/>
+
+<!-- BANK 8 -->
+  <regblock name="SFR8" start="0x0400" end="0x041F">
+    <mapped                   addr="0x0400" mapto="0x00"/><!-- INDF0  -->
+    <mapped                   addr="0x0401" mapto="0x01"/><!-- INDF1  -->
+    <mapped                   addr="0x0402" mapto="0x02"/><!-- PCL    -->
+    <mapped                   addr="0x0403" mapto="0x03"/><!-- STATUS -->
+    <mapped                   addr="0x0404" mapto="0x04"/><!-- FSR0L  -->
+    <mapped                   addr="0x0405" mapto="0x05"/><!-- FSR0H  -->
+    <mapped                   addr="0x0406" mapto="0x06"/><!-- FSR1L  -->
+    <mapped                   addr="0x0407" mapto="0x07"/><!-- FSR1H  -->
+    <mapped                   addr="0x0408" mapto="0x08"/><!-- BSR    -->
+    <mapped                   addr="0x0409" mapto="0x09"/><!-- WREG   -->
+    <mapped                   addr="0x040A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                   addr="0x040B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM8" start="0x0470" end="0x047F" mapto="0x0070"/>
+
+<!-- BANK 9 -->
+  <regblock name="SFR9" start="0x0480" end="0x049F">
+    <mapped                   addr="0x0480" mapto="0x00"/><!-- INDF0  -->
+    <mapped                   addr="0x0481" mapto="0x01"/><!-- INDF1  -->
+    <mapped                   addr="0x0482" mapto="0x02"/><!-- PCL    -->
+    <mapped                   addr="0x0483" mapto="0x03"/><!-- STATUS -->
+    <mapped                   addr="0x0484" mapto="0x04"/><!-- FSR0L  -->
+    <mapped                   addr="0x0485" mapto="0x05"/><!-- FSR0H  -->
+    <mapped                   addr="0x0486" mapto="0x06"/><!-- FSR1L  -->
+    <mapped                   addr="0x0487" mapto="0x07"/><!-- FSR1H  -->
+    <mapped                   addr="0x0488" mapto="0x08"/><!-- BSR    -->
+    <mapped                   addr="0x0489" mapto="0x09"/><!-- WREG   -->
+    <mapped                   addr="0x048A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                   addr="0x048B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM9" start="0x04F0" end="0x04FF" mapto="0x0070"/>
+
+<!-- BANK 10 -->
+  <regblock name="SFR10" start="0x0500" end="0x051F">
+    <mapped                   addr="0x0500" mapto="0x00"/><!-- INDF0  -->
+    <mapped                   addr="0x0501" mapto="0x01"/><!-- INDF1  -->
+    <mapped                   addr="0x0502" mapto="0x02"/><!-- PCL    -->
+    <mapped                   addr="0x0503" mapto="0x03"/><!-- STATUS -->
+    <mapped                   addr="0x0504" mapto="0x04"/><!-- FSR0L  -->
+    <mapped                   addr="0x0505" mapto="0x05"/><!-- FSR0H  -->
+    <mapped                   addr="0x0506" mapto="0x06"/><!-- FSR1L  -->
+    <mapped                   addr="0x0507" mapto="0x07"/><!-- FSR1H  -->
+    <mapped                   addr="0x0508" mapto="0x08"/><!-- BSR    -->
+    <mapped                   addr="0x0509" mapto="0x09"/><!-- WREG   -->
+    <mapped                   addr="0x050A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                   addr="0x050B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM10" start="0x0570" end="0x057F" mapto="0x0070"/>
+
+<!-- BANK 11 -->
+  <regblock name="SFR11" start="0x0580" end="0x059F">
+    <mapped                   addr="0x0580" mapto="0x00"/><!-- INDF0  -->
+    <mapped                   addr="0x0581" mapto="0x01"/><!-- INDF1  -->
+    <mapped                   addr="0x0582" mapto="0x02"/><!-- PCL    -->
+    <mapped                   addr="0x0583" mapto="0x03"/><!-- STATUS -->
+    <mapped                   addr="0x0584" mapto="0x04"/><!-- FSR0L  -->
+    <mapped                   addr="0x0585" mapto="0x05"/><!-- FSR0H  -->
+    <mapped                   addr="0x0586" mapto="0x06"/><!-- FSR1L  -->
+    <mapped                   addr="0x0587" mapto="0x07"/><!-- FSR1H  -->
+    <mapped                   addr="0x0588" mapto="0x08"/><!-- BSR    -->
+    <mapped                   addr="0x0589" mapto="0x09"/><!-- WREG   -->
+    <mapped                   addr="0x058A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                   addr="0x058B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM11" start="0x05F0" end="0x05FF" mapto="0x0070"/>
+
+<!-- BANK 12 -->
+  <regblock name="SFR12" start="0x0600" end="0x061F">
+    <mapped                   addr="0x0600" mapto="0x00"/><!-- INDF0  -->
+    <mapped                   addr="0x0601" mapto="0x01"/><!-- INDF1  -->
+    <mapped                   addr="0x0602" mapto="0x02"/><!-- PCL    -->
+    <mapped                   addr="0x0603" mapto="0x03"/><!-- STATUS -->
+    <mapped                   addr="0x0604" mapto="0x04"/><!-- FSR0L  -->
+    <mapped                   addr="0x0605" mapto="0x05"/><!-- FSR0H  -->
+    <mapped                   addr="0x0606" mapto="0x06"/><!-- FSR1L  -->
+    <mapped                   addr="0x0607" mapto="0x07"/><!-- FSR1H  -->
+    <mapped                   addr="0x0608" mapto="0x08"/><!-- BSR    -->
+    <mapped                   addr="0x0609" mapto="0x09"/><!-- WREG   -->
+    <mapped                   addr="0x060A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                   addr="0x060B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM12" start="0x0670" end="0x067F" mapto="0x0070"/>
+
+<!-- BANK 13 -->
+  <regblock name="SFR13" start="0x0680" end="0x069F">
+    <mapped                   addr="0x0680" mapto="0x00"/><!-- INDF0  -->
+    <mapped                   addr="0x0681" mapto="0x01"/><!-- INDF1  -->
+    <mapped                   addr="0x0682" mapto="0x02"/><!-- PCL    -->
+    <mapped                   addr="0x0683" mapto="0x03"/><!-- STATUS -->
+    <mapped                   addr="0x0684" mapto="0x04"/><!-- FSR0L  -->
+    <mapped                   addr="0x0685" mapto="0x05"/><!-- FSR0H  -->
+    <mapped                   addr="0x0686" mapto="0x06"/><!-- FSR1L  -->
+    <mapped                   addr="0x0687" mapto="0x07"/><!-- FSR1H  -->
+    <mapped                   addr="0x0688" mapto="0x08"/><!-- BSR    -->
+    <mapped                   addr="0x0689" mapto="0x09"/><!-- WREG   -->
+    <mapped                   addr="0x068A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                   addr="0x068B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM13" start="0x06F0" end="0x06FF" mapto="0x0070"/>
+
+<!-- BANK 14 -->
+  <regblock name="SFR14" start="0x0700" end="0x071F">
+    <mapped                   addr="0x0700" mapto="0x00"/><!-- INDF0  -->
+    <mapped                   addr="0x0701" mapto="0x01"/><!-- INDF1  -->
+    <mapped                   addr="0x0702" mapto="0x02"/><!-- PCL    -->
+    <mapped                   addr="0x0703" mapto="0x03"/><!-- STATUS -->
+    <mapped                   addr="0x0704" mapto="0x04"/><!-- FSR0L  -->
+    <mapped                   addr="0x0705" mapto="0x05"/><!-- FSR0H  -->
+    <mapped                   addr="0x0706" mapto="0x06"/><!-- FSR1L  -->
+    <mapped                   addr="0x0707" mapto="0x07"/><!-- FSR1H  -->
+    <mapped                   addr="0x0708" mapto="0x08"/><!-- BSR    -->
+    <mapped                   addr="0x0709" mapto="0x09"/><!-- WREG   -->
+    <mapped                   addr="0x070A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                   addr="0x070B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM14" start="0x0770" end="0x077F" mapto="0x0070"/>
+
+<!-- BANK 15 -->
+  <regblock name="SFR15" start="0x0780" end="0x079F">
+    <mapped                   addr="0x0780" mapto="0x00"/><!-- INDF0  -->
+    <mapped                   addr="0x0781" mapto="0x01"/><!-- INDF1  -->
+    <mapped                   addr="0x0782" mapto="0x02"/><!-- PCL    -->
+    <mapped                   addr="0x0783" mapto="0x03"/><!-- STATUS -->
+    <mapped                   addr="0x0784" mapto="0x04"/><!-- FSR0L  -->
+    <mapped                   addr="0x0785" mapto="0x05"/><!-- FSR0H  -->
+    <mapped                   addr="0x0786" mapto="0x06"/><!-- FSR1L  -->
+    <mapped                   addr="0x0787" mapto="0x07"/><!-- FSR1H  -->
+    <mapped                   addr="0x0788" mapto="0x08"/><!-- BSR    -->
+    <mapped                   addr="0x0789" mapto="0x09"/><!-- WREG   -->
+    <mapped                   addr="0x078A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                   addr="0x078B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM15" start="0x07F0" end="0x07FF" mapto="0x0070"/>
+
+<!-- BANK 16 -->
+  <regblock name="SFR16" start="0x0800" end="0x081F">
+    <mapped                   addr="0x0800" mapto="0x00"/><!-- INDF0  -->
+    <mapped                   addr="0x0801" mapto="0x01"/><!-- INDF1  -->
+    <mapped                   addr="0x0802" mapto="0x02"/><!-- PCL    -->
+    <mapped                   addr="0x0803" mapto="0x03"/><!-- STATUS -->
+    <mapped                   addr="0x0804" mapto="0x04"/><!-- FSR0L  -->
+    <mapped                   addr="0x0805" mapto="0x05"/><!-- FSR0H  -->
+    <mapped                   addr="0x0806" mapto="0x06"/><!-- FSR1L  -->
+    <mapped                   addr="0x0807" mapto="0x07"/><!-- FSR1H  -->
+    <mapped                   addr="0x0808" mapto="0x08"/><!-- BSR    -->
+    <mapped                   addr="0x0809" mapto="0x09"/><!-- WREG   -->
+    <mapped                   addr="0x080A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                   addr="0x080B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM16" start="0x0870" end="0x087F" mapto="0x0070"/>
+
+<!-- BANK 17 -->
+  <regblock name="SFR17" start="0x0880" end="0x089F">
+    <mapped                   addr="0x0880" mapto="0x00"/><!-- INDF0  -->
+    <mapped                   addr="0x0881" mapto="0x01"/><!-- INDF1  -->
+    <mapped                   addr="0x0882" mapto="0x02"/><!-- PCL    -->
+    <mapped                   addr="0x0883" mapto="0x03"/><!-- STATUS -->
+    <mapped                   addr="0x0884" mapto="0x04"/><!-- FSR0L  -->
+    <mapped                   addr="0x0885" mapto="0x05"/><!-- FSR0H  -->
+    <mapped                   addr="0x0886" mapto="0x06"/><!-- FSR1L  -->
+    <mapped                   addr="0x0887" mapto="0x07"/><!-- FSR1H  -->
+    <mapped                   addr="0x0888" mapto="0x08"/><!-- BSR    -->
+    <mapped                   addr="0x0889" mapto="0x09"/><!-- WREG   -->
+    <mapped                   addr="0x088A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                   addr="0x088B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM17" start="0x08F0" end="0x08FF" mapto="0x0070"/>
+
+<!-- BANK 18 -->
+  <regblock name="SFR18" start="0x0900" end="0x091F">
+    <mapped                   addr="0x0900" mapto="0x00"/><!-- INDF0  -->
+    <mapped                   addr="0x0901" mapto="0x01"/><!-- INDF1  -->
+    <mapped                   addr="0x0902" mapto="0x02"/><!-- PCL    -->
+    <mapped                   addr="0x0903" mapto="0x03"/><!-- STATUS -->
+    <mapped                   addr="0x0904" mapto="0x04"/><!-- FSR0L  -->
+    <mapped                   addr="0x0905" mapto="0x05"/><!-- FSR0H  -->
+    <mapped                   addr="0x0906" mapto="0x06"/><!-- FSR1L  -->
+    <mapped                   addr="0x0907" mapto="0x07"/><!-- FSR1H  -->
+    <mapped                   addr="0x0908" mapto="0x08"/><!-- BSR    -->
+    <mapped                   addr="0x0909" mapto="0x09"/><!-- WREG   -->
+    <mapped                   addr="0x090A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                   addr="0x090B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM18" start="0x0970" end="0x097F" mapto="0x0070"/>
+
+<!-- BANK 19 -->
+  <regblock name="SFR19" start="0x0980" end="0x099F">
+    <mapped                   addr="0x0980" mapto="0x00"/><!-- INDF0  -->
+    <mapped                   addr="0x0981" mapto="0x01"/><!-- INDF1  -->
+    <mapped                   addr="0x0982" mapto="0x02"/><!-- PCL    -->
+    <mapped                   addr="0x0983" mapto="0x03"/><!-- STATUS -->
+    <mapped                   addr="0x0984" mapto="0x04"/><!-- FSR0L  -->
+    <mapped                   addr="0x0985" mapto="0x05"/><!-- FSR0H  -->
+    <mapped                   addr="0x0986" mapto="0x06"/><!-- FSR1L  -->
+    <mapped                   addr="0x0987" mapto="0x07"/><!-- FSR1H  -->
+    <mapped                   addr="0x0988" mapto="0x08"/><!-- BSR    -->
+    <mapped                   addr="0x0989" mapto="0x09"/><!-- WREG   -->
+    <mapped                   addr="0x098A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                   addr="0x098B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM19" start="0x09F0" end="0x09FF" mapto="0x0070"/>
+
+<!-- BANK 20 -->
+  <regblock name="SFR20" start="0x0A00" end="0x0A1F">
+    <mapped                   addr="0x0A00" mapto="0x00"/><!-- INDF0  -->
+    <mapped                   addr="0x0A01" mapto="0x01"/><!-- INDF1  -->
+    <mapped                   addr="0x0A02" mapto="0x02"/><!-- PCL    -->
+    <mapped                   addr="0x0A03" mapto="0x03"/><!-- STATUS -->
+    <mapped                   addr="0x0A04" mapto="0x04"/><!-- FSR0L  -->
+    <mapped                   addr="0x0A05" mapto="0x05"/><!-- FSR0H  -->
+    <mapped                   addr="0x0A06" mapto="0x06"/><!-- FSR1L  -->
+    <mapped                   addr="0x0A07" mapto="0x07"/><!-- FSR1H  -->
+    <mapped                   addr="0x0A08" mapto="0x08"/><!-- BSR    -->
+    <mapped                   addr="0x0A09" mapto="0x09"/><!-- WREG   -->
+    <mapped                   addr="0x0A0A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                   addr="0x0A0B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM20" start="0x0A70" end="0x0A7F" mapto="0x0070"/>
+
+<!-- BANK 21 -->
+  <regblock name="SFR21" start="0x0A80" end="0x0A9F">
+    <mapped                   addr="0x0A80" mapto="0x00"/><!-- INDF0  -->
+    <mapped                   addr="0x0A81" mapto="0x01"/><!-- INDF1  -->
+    <mapped                   addr="0x0A82" mapto="0x02"/><!-- PCL    -->
+    <mapped                   addr="0x0A83" mapto="0x03"/><!-- STATUS -->
+    <mapped                   addr="0x0A84" mapto="0x04"/><!-- FSR0L  -->
+    <mapped                   addr="0x0A85" mapto="0x05"/><!-- FSR0H  -->
+    <mapped                   addr="0x0A86" mapto="0x06"/><!-- FSR1L  -->
+    <mapped                   addr="0x0A87" mapto="0x07"/><!-- FSR1H  -->
+    <mapped                   addr="0x0A88" mapto="0x08"/><!-- BSR    -->
+    <mapped                   addr="0x0A89" mapto="0x09"/><!-- WREG   -->
+    <mapped                   addr="0x0A8A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                   addr="0x0A8B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM21" start="0x0AF0" end="0x0AFF" mapto="0x0070"/>
+
+<!-- BANK 22 -->
+  <regblock name="SFR22" start="0x0B00" end="0x0B1F">
+    <mapped                   addr="0x0B00" mapto="0x00"/><!-- INDF0  -->
+    <mapped                   addr="0x0B01" mapto="0x01"/><!-- INDF1  -->
+    <mapped                   addr="0x0B02" mapto="0x02"/><!-- PCL    -->
+    <mapped                   addr="0x0B03" mapto="0x03"/><!-- STATUS -->
+    <mapped                   addr="0x0B04" mapto="0x04"/><!-- FSR0L  -->
+    <mapped                   addr="0x0B05" mapto="0x05"/><!-- FSR0H  -->
+    <mapped                   addr="0x0B06" mapto="0x06"/><!-- FSR1L  -->
+    <mapped                   addr="0x0B07" mapto="0x07"/><!-- FSR1H  -->
+    <mapped                   addr="0x0B08" mapto="0x08"/><!-- BSR    -->
+    <mapped                   addr="0x0B09" mapto="0x09"/><!-- WREG   -->
+    <mapped                   addr="0x0B0A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                   addr="0x0B0B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM22" start="0x0B70" end="0x0B7F" mapto="0x0070"/>
+
+<!-- BANK 23 -->
+  <regblock name="SFR23" start="0x0B80" end="0x0B9F">
+    <mapped                   addr="0x0B80" mapto="0x00"/><!-- INDF0  -->
+    <mapped                   addr="0x0B81" mapto="0x01"/><!-- INDF1  -->
+    <mapped                   addr="0x0B82" mapto="0x02"/><!-- PCL    -->
+    <mapped                   addr="0x0B83" mapto="0x03"/><!-- STATUS -->
+    <mapped                   addr="0x0B84" mapto="0x04"/><!-- FSR0L  -->
+    <mapped                   addr="0x0B85" mapto="0x05"/><!-- FSR0H  -->
+    <mapped                   addr="0x0B86" mapto="0x06"/><!-- FSR1L  -->
+    <mapped                   addr="0x0B87" mapto="0x07"/><!-- FSR1H  -->
+    <mapped                   addr="0x0B88" mapto="0x08"/><!-- BSR    -->
+    <mapped                   addr="0x0B89" mapto="0x09"/><!-- WREG   -->
+    <mapped                   addr="0x0B8A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                   addr="0x0B8B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM23" start="0x0BF0" end="0x0BFF" mapto="0x0070"/>
+
+<!-- BANK 24 -->
+  <regblock name="SFR24" start="0x0C00" end="0x0C1F">
+    <mapped                   addr="0x0C00" mapto="0x00"/><!-- INDF0  -->
+    <mapped                   addr="0x0C01" mapto="0x01"/><!-- INDF1  -->
+    <mapped                   addr="0x0C02" mapto="0x02"/><!-- PCL    -->
+    <mapped                   addr="0x0C03" mapto="0x03"/><!-- STATUS -->
+    <mapped                   addr="0x0C04" mapto="0x04"/><!-- FSR0L  -->
+    <mapped                   addr="0x0C05" mapto="0x05"/><!-- FSR0H  -->
+    <mapped                   addr="0x0C06" mapto="0x06"/><!-- FSR1L  -->
+    <mapped                   addr="0x0C07" mapto="0x07"/><!-- FSR1H  -->
+    <mapped                   addr="0x0C08" mapto="0x08"/><!-- BSR    -->
+    <mapped                   addr="0x0C09" mapto="0x09"/><!-- WREG   -->
+    <mapped                   addr="0x0C0A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                   addr="0x0C0B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM24" start="0x0C70" end="0x0C7F" mapto="0x0070"/>
+
+<!-- BANK 25 -->
+  <regblock name="SFR25" start="0x0C80" end="0x0C9F">
+    <mapped                   addr="0x0C80" mapto="0x00"/><!-- INDF0  -->
+    <mapped                   addr="0x0C81" mapto="0x01"/><!-- INDF1  -->
+    <mapped                   addr="0x0C82" mapto="0x02"/><!-- PCL    -->
+    <mapped                   addr="0x0C83" mapto="0x03"/><!-- STATUS -->
+    <mapped                   addr="0x0C84" mapto="0x04"/><!-- FSR0L  -->
+    <mapped                   addr="0x0C85" mapto="0x05"/><!-- FSR0H  -->
+    <mapped                   addr="0x0C86" mapto="0x06"/><!-- FSR1L  -->
+    <mapped                   addr="0x0C87" mapto="0x07"/><!-- FSR1H  -->
+    <mapped                   addr="0x0C88" mapto="0x08"/><!-- BSR    -->
+    <mapped                   addr="0x0C89" mapto="0x09"/><!-- WREG   -->
+    <mapped                   addr="0x0C8A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                   addr="0x0C8B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM25" start="0x0CF0" end="0x0CFF" mapto="0x0070"/>
+
+<!-- BANK 26 -->
+  <regblock name="SFR26" start="0x0D00" end="0x0D1F">
+    <mapped                   addr="0x0D00" mapto="0x00"/><!-- INDF0  -->
+    <mapped                   addr="0x0D01" mapto="0x01"/><!-- INDF1  -->
+    <mapped                   addr="0x0D02" mapto="0x02"/><!-- PCL    -->
+    <mapped                   addr="0x0D03" mapto="0x03"/><!-- STATUS -->
+    <mapped                   addr="0x0D04" mapto="0x04"/><!-- FSR0L  -->
+    <mapped                   addr="0x0D05" mapto="0x05"/><!-- FSR0H  -->
+    <mapped                   addr="0x0D06" mapto="0x06"/><!-- FSR1L  -->
+    <mapped                   addr="0x0D07" mapto="0x07"/><!-- FSR1H  -->
+    <mapped                   addr="0x0D08" mapto="0x08"/><!-- BSR    -->
+    <mapped                   addr="0x0D09" mapto="0x09"/><!-- WREG   -->
+    <mapped                   addr="0x0D0A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                   addr="0x0D0B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM26" start="0x0D70" end="0x0D7F" mapto="0x0070"/>
+
+<!-- BANK 27 -->
+  <regblock name="SFR27" start="0x0D80" end="0x0D9F">
+    <mapped                   addr="0x0D80" mapto="0x00"/><!-- INDF0  -->
+    <mapped                   addr="0x0D81" mapto="0x01"/><!-- INDF1  -->
+    <mapped                   addr="0x0D82" mapto="0x02"/><!-- PCL    -->
+    <mapped                   addr="0x0D83" mapto="0x03"/><!-- STATUS -->
+    <mapped                   addr="0x0D84" mapto="0x04"/><!-- FSR0L  -->
+    <mapped                   addr="0x0D85" mapto="0x05"/><!-- FSR0H  -->
+    <mapped                   addr="0x0D86" mapto="0x06"/><!-- FSR1L  -->
+    <mapped                   addr="0x0D87" mapto="0x07"/><!-- FSR1H  -->
+    <mapped                   addr="0x0D88" mapto="0x08"/><!-- BSR    -->
+    <mapped                   addr="0x0D89" mapto="0x09"/><!-- WREG   -->
+    <mapped                   addr="0x0D8A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                   addr="0x0D8B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM27" start="0x0DF0" end="0x0DFF" mapto="0x0070"/>
+
+<!-- BANK 28 -->
+  <regblock name="SFR28" start="0x0E00" end="0x0E1F">
+    <mapped                   addr="0x0E00" mapto="0x00"/><!-- INDF0  -->
+    <mapped                   addr="0x0E01" mapto="0x01"/><!-- INDF1  -->
+    <mapped                   addr="0x0E02" mapto="0x02"/><!-- PCL    -->
+    <mapped                   addr="0x0E03" mapto="0x03"/><!-- STATUS -->
+    <mapped                   addr="0x0E04" mapto="0x04"/><!-- FSR0L  -->
+    <mapped                   addr="0x0E05" mapto="0x05"/><!-- FSR0H  -->
+    <mapped                   addr="0x0E06" mapto="0x06"/><!-- FSR1L  -->
+    <mapped                   addr="0x0E07" mapto="0x07"/><!-- FSR1H  -->
+    <mapped                   addr="0x0E08" mapto="0x08"/><!-- BSR    -->
+    <mapped                   addr="0x0E09" mapto="0x09"/><!-- WREG   -->
+    <mapped                   addr="0x0E0A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                   addr="0x0E0B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM28" start="0x0E70" end="0x0E7F" mapto="0x0070"/>
+
+<!-- BANK 29 -->
+  <regblock name="SFR29" start="0x0E80" end="0x0E9F">
+    <mapped                   addr="0x0E80" mapto="0x00"/><!-- INDF0  -->
+    <mapped                   addr="0x0E81" mapto="0x01"/><!-- INDF1  -->
+    <mapped                   addr="0x0E82" mapto="0x02"/><!-- PCL    -->
+    <mapped                   addr="0x0E83" mapto="0x03"/><!-- STATUS -->
+    <mapped                   addr="0x0E84" mapto="0x04"/><!-- FSR0L  -->
+    <mapped                   addr="0x0E85" mapto="0x05"/><!-- FSR0H  -->
+    <mapped                   addr="0x0E86" mapto="0x06"/><!-- FSR1L  -->
+    <mapped                   addr="0x0E87" mapto="0x07"/><!-- FSR1H  -->
+    <mapped                   addr="0x0E88" mapto="0x08"/><!-- BSR    -->
+    <mapped                   addr="0x0E89" mapto="0x09"/><!-- WREG   -->
+    <mapped                   addr="0x0E8A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                   addr="0x0E8B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM29" start="0x0EF0" end="0x0EFF" mapto="0x0070"/>
+
+<!-- BANK 30 -->
+  <regblock name="SFR30" start="0x0F00" end="0x0F1F">
+    <mapped                   addr="0x0F00" mapto="0x00"/><!-- INDF0  -->
+    <mapped                   addr="0x0F01" mapto="0x01"/><!-- INDF1  -->
+    <mapped                   addr="0x0F02" mapto="0x02"/><!-- PCL    -->
+    <mapped                   addr="0x0F03" mapto="0x03"/><!-- STATUS -->
+    <mapped                   addr="0x0F04" mapto="0x04"/><!-- FSR0L  -->
+    <mapped                   addr="0x0F05" mapto="0x05"/><!-- FSR0H  -->
+    <mapped                   addr="0x0F06" mapto="0x06"/><!-- FSR1L  -->
+    <mapped                   addr="0x0F07" mapto="0x07"/><!-- FSR1H  -->
+    <mapped                   addr="0x0F08" mapto="0x08"/><!-- BSR    -->
+    <mapped                   addr="0x0F09" mapto="0x09"/><!-- WREG   -->
+    <mapped                   addr="0x0F0A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                   addr="0x0F0B" mapto="0x0B"/><!-- INTCON -->
+  </regblock>
+
+  <datablock name="RAM30" start="0x0F70" end="0x0F7F" mapto="0x0070"/>
+
+<!-- BANK 31 -->
+  <regblock name="SFR31" start="0x0F80" end="0x0FEF">
+    <mapped                   addr="0x0F80" mapto="0x00"/><!-- INDF0  -->
+    <mapped                   addr="0x0F81" mapto="0x01"/><!-- INDF1  -->
+    <mapped                   addr="0x0F82" mapto="0x02"/><!-- PCL    -->
+    <mapped                   addr="0x0F83" mapto="0x03"/><!-- STATUS -->
+    <mapped                   addr="0x0F84" mapto="0x04"/><!-- FSR0L  -->
+    <mapped                   addr="0x0F85" mapto="0x05"/><!-- FSR0H  -->
+    <mapped                   addr="0x0F86" mapto="0x06"/><!-- FSR1L  -->
+    <mapped                   addr="0x0F87" mapto="0x07"/><!-- FSR1H  -->
+    <mapped                   addr="0x0F88" mapto="0x08"/><!-- BSR    -->
+    <mapped                   addr="0x0F89" mapto="0x09"/><!-- WREG   -->
+    <mapped                   addr="0x0F8A" mapto="0x0A"/><!-- PCLATH -->
+    <mapped                   addr="0x0F8B" mapto="0x0B"/><!-- INTCON -->
+
+    <register  name="STATUS_SHAD"  addr="0xFE4"  reset="" mask="" bits="" />
+    <register  name="WREG_SHAD"    addr="0xFE5"  reset="" mask="" bits="" />
+    <register  name="BSR_SHAD"     addr="0xFE6"  reset="" mask="" bits="" />
+    <register  name="PCLATH_SHAD"  addr="0xFE7"  reset="" mask="" bits="" />
+    <register  name="FSR0L_SHAD"   addr="0xFE8"  reset="" mask="" bits="" />
+    <register  name="FSR0H_SHAD"   addr="0xFE9"  reset="" mask="" bits="" />
+    <register  name="FSR1L_SHAD"   addr="0xFEA"  reset="" mask="" bits="" />
+    <register  name="FSR1H_SHAD"   addr="0xFEB"  reset="" mask="" bits="" />
+
+    <register  name="STKPTR"       addr="0xFED"  reset="" mask="" bits="" />
+    <register  name="TOSL"         addr="0xFEE"  reset="" mask="" bits="" />
+    <register  name="TOSH"         addr="0xFEF"  reset="" mask="" bits="" />
+  </regblock>
+
+  <datablock name="RAM31" start="0x0FF0" end="0x0FFF" mapto="0x0070"/>
+
 </parts>
