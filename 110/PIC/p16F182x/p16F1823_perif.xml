@@ -66,16 +66,16 @@
 
   <vref name="Vref" configregsA="FVRCON" />
 
+  <dac name="DAC" configregsA="DACCON0"
+                  dacreg="DACCON1"
+                  pins="PORTA1,PORTA0,PORTA0" />
+
   <adc name="ADC" type="20" bits="10" configregsA="ADCON0" configregsB="ADCON1"
                   dataregs="ADRESL,ADRESH"
                   interrupt="ADC"
                   prescalers="2,8,32,0,4,16,64,0"
                   adcpins="PORTA0,PORTA1,PORTA2,PORTA4,PORTC0,PORTC1,PORTC2,PORTC3"
                   vrefpins="PORTA1"/>
-
-  <dac name="DAC" configregsA="DACCON0"
-                  dacreg="DACCON1"
-                  pins="PORTA0" />
 
   <comp name="COMP1" type="20" configregsA="CM1CON0" configregsB="CM1CON1"
                      interrupt="COMP1"

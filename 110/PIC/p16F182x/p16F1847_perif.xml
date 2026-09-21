@@ -9,11 +9,11 @@
   <port name="PORTB" pins="8" outreg="PORTB,LATB" dirreg="!TRISB"
                      configregsA="ANSELB"
                      pullups="WPUB" >
-                     
+
     <interrupt name="IOC" mask="11111111"/>
     <extint    name="INT" pin="PORTB0" configbits="INTEDG"/>
   </port>
-  
+
   <intosc name="intosc" type="02" configregsA="OSCCON" 
                         clockpins="PORTA6,PORTA7" />
 
@@ -72,7 +72,7 @@
   </usart>
 
   <msspunit name="MSSP1" type="00" configregsA="SSP1CON1" >
-                      
+
     <twi name="TWI"  configregsA="SSP1CON1" configregsB="SSP1CON2" 
                      dataregs="SSP1BUF" 
                      addressreg="SSP1ADD"
@@ -90,7 +90,7 @@
   </msspunit>
 
   <msspunit name="MSSP2" type="00" configregsA="SSP2CON1" >
-                      
+
     <twi name="TWI"  configregsA="SSP2CON1" configregsB="SSP2CON2" 
                      dataregs="SSP2BUF" 
                      addressreg="SSP2ADD"
@@ -109,16 +109,16 @@
 
   <vref name="Vref" configregsA="FVRCON" />
 
+  <dac name="DAC" configregsA="DACCON0"
+                  dacreg="DACCON1"
+                  pins="PORTA3,PORTA2,PORTA2" />
+
   <adc name="ADC" type="20" bits="10" configregsA="ADCON0" configregsB="ADCON1"
                   dataregs="ADRESL,ADRESH"
                   interrupt="ADC"
                   prescalers="2,8,32,0,4,16,64,0"
                   adcpins="PORTA0,PORTA1,PORTA2,PORTA3,PORTA4,PORTB6,PORTB7,PORTB5,PORTB4,PORTB3,PORTB2,PORTB1"
                   vrefpins="PORTA3,PORTA2"/>
-
-  <dac name="DAC" configregsA="DACCON0"
-                  dacreg="DACCON1"
-                  pins="PORTA2" />
 
   <comp name="COMP1" type="20" configregsA="CM1CON0" configregsB="CM1CON1"
                      interrupt="COMP1"
