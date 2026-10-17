@@ -113,7 +113,7 @@
     <register  name="RCSTA"     addr="0x19D" reset="00000000  " mask="11111111"
                bits="RX9D,OERR,FERR,ADDEN,CREN,SREN,RX9,SPEN" />
     <register  name="TXSTA"     addr="0x19E" reset="00000010  " mask="11111111"
-               bits="TX9D,TMRT,BRGH,SENDB,SYNC,TXEN,TX9,CSRC" />
+               bits="TX9D,TRMT,BRGH,SENDB,SYNC,TXEN,TX9,CSRC" />
     <register  name="BAUDCON"   addr="0x19F" reset="01000000  " mask="11011011"
                bits="ABDEN,WUE,0,BRG16,SCKP,0,RCIDL,ABDOVF" />
   </regblock>
