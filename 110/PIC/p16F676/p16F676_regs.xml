@@ -19,12 +19,12 @@
     <register  name="TMR1L"   addr="0x00E" reset="00000000  " mask="11111111" bits="" />
     <register  name="TMR1H"   addr="0x00F" reset="00000000  " mask="11111111" bits="" />
     <register  name="T1CON"   addr="0x010" reset="00000000  " mask="01111111"
-               bits="TMR1ON,TMR1CS,T1SYNC,T1OSCEN,T1CKPS,0,TMR1GE,0" />
+               bits="TMR1ON,TMR1CS,T1SYNC,T1OSCEN,T1CKPS0,T1CKPS1,TMR1GE,0" />
     <register  name="CMCON"   addr="0x019" reset="00000000  " mask="01011111"
-               bits="CM,0,0,CIS,CINV,0,COUT,0" />
+               bits="CM0,CM1,CM2,CIS,CINV,0,COUT,0" />
     <register  name="ADRESH"  addr="0x01E" reset="00000000  " mask="11111111" bits="" />
     <register  name="ADCON0"  addr="0x01F" reset="00000000  " mask="11011111"
-               bits="ADON,GO/DONE,CHS,0,0,0,VCFG,ADFM" />
+               bits="ADON,GO/DONE,CHS0,CHS1,CHS2,0,VCFG,ADFM" />
   </regblock>
   <datablock name="GPR0" start="0x0020" end="0x005F" />
 
@@ -36,7 +36,7 @@
     <mapped  addr="0x08A" mapto="0x00A" /> <!-- PCLATH -->
     <mapped  addr="0x08B" mapto="0x00B" /> <!-- INTCON -->
     <register  name="OPTION"  addr="0x081" reset="11111111  " mask="11111111"
-               bits="PS,0,0,PSA,T0SE,T0CS,INTEDG,nRAPU" />
+               bits="PS0,PS1,PS2,PSA,T0SE,T0CS,INTEDG,RAPU" />
     <register  name="TRISA"   addr="0x085" reset="00111111  " mask="00111111"
                bits="TRISA0,TRISA1,TRISA2,TRISA3,TRISA4,TRISA5,0,0" />
     <register  name="TRISC"   addr="0x087" reset="00111111  " mask="00111111"
@@ -46,7 +46,7 @@
     <register  name="PCON"    addr="0x08E" reset="00000000  " mask="00000011"
                bits="NOT_BOR,NOT_POR,0,0,0,0,0,0" />
     <register  name="OSCCAL"  addr="0x090" reset="10000000  " mask="11111100"
-               bits="0,0,CAL,0,0,0,0,0" />
+               bits="0,0,CAL0,CAL1,CAL2,CAL3,CAL4,CAL5" />
     <register  name="ANSEL"   addr="0x091" reset="11111111  " mask="11111111"
                bits="ANS0,ANS1,ANS2,ANS3,ANS4,ANS5,ANS6,ANS7" />
     <register  name="WPUA"    addr="0x095" reset="00110111  " mask="00110111"
@@ -54,7 +54,7 @@
     <register  name="IOCA"    addr="0x096" reset="00000000  " mask="00111111"
                bits="IOCA0,IOCA1,IOCA2,IOCA3,IOCA4,IOCA5,0,0" />
     <register  name="VRCON"   addr="0x099" reset="00000000  " mask="10101111"
-               bits="VR,0,0,0,0,VRR,0,VREN" />
+               bits="VR0,VR1,VR2,VR3,0,VRR,0,VREN" />
     <register  name="EEDAT"   addr="0x09A" reset="00000000  " mask="11111111" bits="" />
     <register  name="EEADR"   addr="0x09B" reset="00000000  " mask="01111111" bits="" />
     <register  name="EECON1"  addr="0x09C" reset="00000000  " mask="00001111"
@@ -62,7 +62,7 @@
     <register  name="EECON2"  addr="0x09D" reset="00000000  " mask="11111111" bits="" />
     <register  name="ADRESL"  addr="0x09E" reset="00000000  " mask="11111111" bits="" />
     <register  name="ADCON1"  addr="0x09F" reset="00000000  " mask="01110000"
-               bits="0,0,0,0,ADCS,0,0,0" />
+               bits="0,0,0,0,ADCS0,ADCS1,ADCS2,0" />
   </regblock>
   <datablock name="GPR1" start="0x00A0" end="0x00DF" mapto="0x0020" />
 

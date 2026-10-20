@@ -7,6 +7,8 @@
         <item name="p10F202" package="PIC/p10F20x/p10F20x" data="PIC/p10F202"></item>
         <item name="p10F204" package="PIC/p10F20x/p10F20x" data="PIC/p10F204"></item>
         <item name="p10F206" package="PIC/p10F20x/p10F20x" data="PIC/p10F206"></item>
+        <item name="p10F220" package="PIC/p10F20x/p10F20x" data="PIC/p10F220"></item>
+        <item name="p10F222" package="PIC/p10F20x/p10F20x" data="PIC/p10F222"></item>
     </itemset>
     <itemset category="PIC/p12F" type="MCU">
         <item name="p12F629" package="PIC/p12F629/p12F629" data="PIC/p12F629"></item>

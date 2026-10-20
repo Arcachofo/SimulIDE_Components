@@ -27,7 +27,7 @@
     <mapped  addr="0x08A" mapto="0x00A" /> <!-- PCLATH -->
     <mapped  addr="0x08B" mapto="0x00B" /> <!-- INTCON -->
     <register  name="OPTION"  addr="0x081" reset="11111111  " mask="11111111"
-               bits="PS,0,0,PSA,T0SE,T0CS,INTEDG,nRBPU" />
+               bits="PS0,PS1,PS2,PSA,T0SE,T0CS,INTEDG,RBPU" />
     <register  name="TRISA"   addr="0x085" reset="00011111  " mask="00011111"
                bits="TRISA0,TRISA1,TRISA2,TRISA3,TRISA4,0,0,0" />
     <register  name="TRISB"   addr="0x086" reset="11111111  " mask="11111111"
